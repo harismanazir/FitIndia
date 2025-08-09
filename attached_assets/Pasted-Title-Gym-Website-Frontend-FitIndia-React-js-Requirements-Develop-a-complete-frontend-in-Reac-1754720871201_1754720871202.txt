@@ -1,0 +1,60 @@
+Title: Gym Website Frontend – FitIndia (React.js)
+
+Requirements:
+Develop a complete frontend in React.js for a gym website named "FitIndia".
+The website should have multiple pages and use React Router for navigation.
+Make the design modern, visually appealing, and responsive.
+Keep the code clean, readable, and well-commented so I can understand it later.
+Use a good color scheme (preferably fitness/gym-related colors like dark grey, black, red, white, and orange) and high-quality images.
+
+Pages to Include:
+
+Home Page – Hero banner with an inspiring gym image, tagline, and a “Join Now” button.
+
+About Us – Mission, vision, and history of FitIndia, plus images of facilities.
+
+Programs/Services – List of workout programs (e.g., Yoga, CrossFit, Strength Training, Zumba) with descriptions and images.
+
+Trainers – Profiles of trainers with photos, expertise, and short bios.
+
+Membership Plans – Pricing table for different plans (Monthly, Quarterly, Yearly).
+
+Contact Us – Contact form with name, email, message, and a Google Maps embed showing location.
+
+Technical Requirements:
+
+Use React Router v6 for page navigation.
+
+Use functional components with hooks (useState, useEffect).
+
+Use CSS Modules or Tailwind CSS for styling (pick one and stick to it).
+
+Store static content like images in a public assets folder.
+
+Make the layout responsive for mobile, tablet, and desktop.
+
+Include a sticky navigation bar and a footer on all pages.
+
+Use dummy data arrays to render repeated items (e.g., trainers, programs).
+
+Comment your code generously to explain logic and structure.
+
+Design Guidelines:
+
+Color scheme: Dark grey/black background with red/orange highlights and white text.
+
+Font: Use Google Fonts (e.g., "Poppins" or "Roboto").
+
+Spacing: Maintain clean margins and paddings.
+
+Buttons: Rounded corners with hover effects.
+
+Images: Use royalty-free fitness images (e.g., from Unsplash or Pexels).
+
+Final Deliverables:
+
+A fully working React.js project with the described pages and routing.
+
+Code should be easy to read and modify.
+
+Include setup instructions in a README.md file.
