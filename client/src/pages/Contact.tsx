@@ -1,50 +1,80 @@
+// Import React hooks for state management and UI feedback
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast"; // Toast notifications for user feedback
 
 /**
- * Contact page component with contact form and location information
- * Features form validation and Google Maps integration placeholder
- * Includes contact details and business hours
+ * Contact page component - Allows visitors to get in touch with FitIndia
+ * 
+ * This page provides multiple ways for potential members to contact the gym:
+ * - Contact form with validation for inquiries and program interest
+ * - Complete contact information (address, phone, email, hours)
+ * - Map placeholder for location display
+ * - Information about free services (gym tour, consultation, Q&A)
+ * 
+ * Form features:
+ * - Client-side validation for required fields
+ * - Toast notifications for success/error feedback
+ * - Dropdown for program interest selection
+ * - Responsive design for all devices
  */
 export default function Contact() {
+  // Hook for displaying toast notifications to user
   const { toast } = useToast();
+  
+  // State to manage all form input data
+  // Using controlled components pattern for form handling
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    interest: "",
-    message: "",
+    firstName: "",    // Required field for personal greeting
+    lastName: "",     // Required field for full name
+    email: "",        // Required field for response contact
+    phone: "",        // Optional field for phone contact preference
+    interest: "",     // Optional dropdown for specific program interest
+    message: "",      // Required field for inquiry details
   });
 
+  /**
+   * Handles input changes for all form fields
+   * Updates the formData state whenever user types in any input field
+   * Uses the 'name' attribute to identify which field to update
+   */
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target; // Get field name and current value
+    
+    // Update only the specific field that changed, keeping other fields unchanged
     setFormData((prev) => ({
-      ...prev,
-      [name]: value,
+      ...prev,        // Keep existing form data
+      [name]: value,  // Update only the field that changed
     }));
   };
 
+  /**
+   * Handles form submission when user clicks "Send Message"
+   * Includes basic client-side validation and user feedback
+   */
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior
     
-    // Basic validation
+    // Basic validation - check if all required fields are filled
+    // Required fields: firstName, lastName, email, message
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      // Show error toast if validation fails
       toast({
         title: "Error",
         description: "Please fill in all required fields.",
-        variant: "destructive",
+        variant: "destructive", // Red error styling
       });
-      return;
+      return; // Stop execution if validation fails
     }
 
-    // Simulate form submission
+    // In a real application, this would send data to a server
+    // For now, we simulate successful submission
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
 
-    // Reset form
+    // Reset form to empty state after successful submission
+    // This provides clear feedback that the form was submitted
     setFormData({
       firstName: "",
       lastName: "",

@@ -1,19 +1,29 @@
 /**
- * Fitness programs data for FitIndia gym
- * Contains information about all available workout programs
- * Each program includes details about duration, level, benefits, and description
+ * FITNESS PROGRAMS DATA FOR FITINDIA GYM
+ * 
+ * This file contains all the fitness program information displayed on the Programs page.
+ * Each program represents a different type of workout or class offered by the gym.
+ * 
+ * Used by: Programs.tsx component to display program cards
+ * 
+ * Data Structure:
+ * - Static data (no API calls needed)
+ * - Images sourced from Unsplash for high-quality fitness photos
+ * - Benefits listed to help users understand program value
+ * - Badges highlight popular or special programs
  */
 
+// TypeScript interface defining the structure of each program
 export interface Program {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  duration: string;
-  level: string;
-  benefits: string[];
-  badge?: string;
-  badgeColor?: string;
+  id: string;           // Unique identifier (used for React keys and data-testid)
+  name: string;         // Display name of the program
+  description: string;  // Brief description of what the program offers
+  image: string;        // URL to high-quality fitness image from Unsplash
+  duration: string;     // How long each session lasts (e.g., "45 min")
+  level: string;        // Difficulty level (All Levels, Beginner, Intermediate, Advanced)
+  benefits: string[];   // Array of benefits users get from this program
+  badge?: string;       // Optional badge text (POPULAR, INTENSE, FUN, etc.)
+  badgeColor?: string;  // Optional Tailwind CSS class for badge color
 }
 
 export const programs: Program[] = [

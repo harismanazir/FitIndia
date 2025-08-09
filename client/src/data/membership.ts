@@ -1,17 +1,28 @@
 /**
- * Membership plans data for FitIndia gym
- * Contains pricing information and features for different membership tiers
- * Includes monthly, quarterly, and yearly options with varying benefits
+ * MEMBERSHIP PLANS DATA FOR FITINDIA GYM
+ * 
+ * This file defines all available membership options with pricing and features.
+ * The data supports a tiered pricing strategy with increasing value and benefits.
+ * 
+ * Used by: Membership.tsx component to display pricing cards
+ * 
+ * Pricing Strategy:
+ * - Monthly: Entry-level with basic features
+ * - Quarterly: Most popular with added personal training (marked with badge)
+ * - Yearly: Premium tier with maximum benefits and best value
+ * 
+ * Currency: Indian Rupees (₹) to match the Indian market focus
  */
 
+// TypeScript interface defining the structure of each membership plan
 export interface MembershipPlan {
-  id: string;
-  name: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  popular?: boolean;
+  id: string;          // Unique identifier for the plan
+  name: string;        // Display name (Monthly, Quarterly, Yearly)
+  price: string;       // Price with currency symbol (₹2,999)
+  period: string;      // Billing period (/month, /3 months, /year)
+  description: string; // Brief explanation of who this plan is for
+  features: string[];  // Array of included benefits and features
+  popular?: boolean;   // Optional flag to highlight as "most popular" plan
 }
 
 export const membershipPlans: MembershipPlan[] = [

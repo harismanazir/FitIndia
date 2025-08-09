@@ -1,18 +1,28 @@
 /**
- * Trainer profiles data for FitIndia gym
- * Contains information about all certified fitness trainers
- * Each trainer includes bio, specialties, experience, and certifications
+ * TRAINER PROFILES DATA FOR FITINDIA GYM
+ * 
+ * This file contains information about all certified fitness trainers working at FitIndia.
+ * Each trainer profile showcases their expertise, experience, and specializations.
+ * 
+ * Used by: Trainers.tsx component to display trainer profile cards
+ * 
+ * Features:
+ * - Professional photos from Unsplash
+ * - Diverse specializations covering all fitness areas
+ * - Real-world experience levels and certifications
+ * - Multiple specialties per trainer for comprehensive coverage
  */
 
+// TypeScript interface defining the structure of each trainer profile
 export interface Trainer {
-  id: string;
-  name: string;
-  specialty: string;
-  bio: string;
-  image: string;
-  experience: string;
-  certification: string;
-  specialties: string[];
+  id: string;            // Unique identifier (kebab-case format for URLs/IDs)
+  name: string;          // Full name of the trainer
+  specialty: string;     // Primary area of expertise (shown as subtitle)
+  bio: string;          // Short biography describing background and approach
+  image: string;        // Professional headshot URL from Unsplash
+  experience: string;   // Years of experience in fitness industry
+  certification: string; // Professional certification credentials
+  specialties: string[]; // Array of specific skills and program types
 }
 
 export const trainers: Trainer[] = [

@@ -1,40 +1,67 @@
+// Import React hooks and routing utilities
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { Link, useLocation } from "wouter"; // Routing components from wouter
+import { useIsMobile } from "@/hooks/use-mobile"; // Custom hook to detect mobile devices
 
 /**
- * Sticky navigation component for the FitIndia website
- * Features responsive design with mobile menu toggle
- * Includes smooth scrolling and background change on scroll
+ * Navigation component - Sticky header navigation for all pages
+ * 
+ * Key features:
+ * - Sticky positioning (stays at top when scrolling)
+ * - Responsive design with mobile hamburger menu
+ * - Dynamic background opacity based on scroll position
+ * - Active page highlighting in navigation links
+ * - FitIndia logo with dumbbell icon
+ * - Call-to-action "Join Now" button
+ * 
+ * Mobile behavior:
+ * - Hamburger menu icon toggles mobile menu
+ * - Mobile menu slides down with all navigation links
+ * - Menu automatically closes when user navigates to new page
  */
 export default function Navigation() {
+  // Get current page location for active link highlighting
   const [location] = useLocation();
+  
+  // State to track if user has scrolled (for background change effect)
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  // State to control mobile menu visibility (open/closed)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Hook to determine if user is on mobile device
   const isMobile = useIsMobile();
 
-  // Handle scroll effect for navbar background
+  // Effect to handle scroll-based background change
+  // Changes navbar opacity/background when user scrolls down
   useEffect(() => {
     const handleScroll = () => {
+      // If scrolled more than 50px, consider it "scrolled"
       setIsScrolled(window.scrollY > 50);
     };
 
+    // Add scroll event listener when component mounts
     window.addEventListener("scroll", handleScroll);
+    
+    // Cleanup: remove event listener when component unmounts
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
+  // Effect to close mobile menu when user navigates to different page
+  // This ensures menu doesn't stay open after user clicks a link
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location]);
+  }, [location]); // Runs whenever the current page location changes
 
+  // Navigation menu items configuration
+  // Each item has a route path and display label
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/programs", label: "Programs" },
-    { href: "/trainers", label: "Trainers" },
-    { href: "/membership", label: "Membership" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: "Home" },           // Landing page with hero section
+    { href: "/about", label: "About" },     // Company info, mission, facilities
+    { href: "/programs", label: "Programs" }, // All fitness programs available
+    { href: "/trainers", label: "Trainers" }, // Trainer profiles and expertise
+    { href: "/membership", label: "Membership" }, // Pricing and membership plans
+    { href: "/contact", label: "Contact" }, // Contact form and location info
   ];
 
   return (

@@ -1,16 +1,37 @@
+/* 
+ * FITINDIA GYM WEBSITE STYLES
+ * 
+ * This CSS file defines the visual design system for the entire website.
+ * It combines Google Fonts, Tailwind CSS, and custom styling for the gym theme.
+ */
+
+/* Import Poppins font from Google Fonts with multiple weights */
+/* Used for all text throughout the website for consistency */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import Tailwind CSS utility classes */
+@tailwind base;        /* Reset styles and base elements */
+@tailwind components;  /* Component classes */
+@tailwind utilities;   /* Utility classes for spacing, colors, etc. */
 
+/* 
+ * CSS CUSTOM PROPERTIES (VARIABLES)
+ * 
+ * These variables define the FitIndia color scheme and design system.
+ * Using HSL format allows for easy color manipulation and theming.
+ * 
+ * Color Strategy:
+ * - Dark backgrounds for premium gym aesthetic
+ * - Orange accent for energy and motivation
+ * - White text for high contrast and readability
+ */
 :root {
-  /* FitIndia Color Scheme */
-  --primary: hsl(0, 0%, 6%);
-  --secondary: hsl(0, 0%, 10%);
-  --accent: hsl(16, 100%, 50%);
-  --accent-light: hsl(16, 100%, 60%);
-  --text-muted: hsl(0, 0%, 63%);
+  /* === FitIndia Brand Colors === */
+  --primary: hsl(0, 0%, 6%);        /* Very dark gray - main background */
+  --secondary: hsl(0, 0%, 10%);     /* Slightly lighter gray - cards/sections */
+  --accent: hsl(16, 100%, 50%);     /* Orange - buttons, highlights, CTAs */
+  --accent-light: hsl(16, 100%, 60%); /* Lighter orange - hover effects */
+  --text-muted: hsl(0, 0%, 63%);    /* Gray text - secondary content */
   
   /* Shadcn Variables */
   --background: hsl(0, 0%, 6%);
