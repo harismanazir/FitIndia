@@ -94,7 +94,7 @@ export default function Home() {
           {/* Orange accent color highlights key words "Body" and "Life" */}
           <h1 
             ref={heroTitleRef}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1]" 
+            className="text-5xl md:text-7xl font-bold mb-6 leading-[1.2]" 
             data-testid="hero-title"
           >
             Transform Your <span className="text-accent">Body</span>
