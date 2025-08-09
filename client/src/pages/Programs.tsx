@@ -1,30 +1,66 @@
 import { programs } from "../data/programs";
 
+// Import GSAP animation hooks for cute, engaging animations
+import {
+  useFadeInUp,
+  useStaggerAnimation,
+  useScrollAnimation,
+  useTextAnimation
+} from "@/hooks/use-gsap-animations";
+
 /**
  * Programs page component showcasing all available fitness programs
- * Displays detailed information about each program including duration, level, and benefits
- * Features responsive grid layout with hover effects
+ * 
+ * Features enhanced with GSAP animations:
+ * - Hero title with typewriter effect
+ * - Staggered animation for program cards
+ * - Scroll-triggered animations for each program section
+ * - Smooth hover effects and transitions
+ * 
+ * Layout:
+ * - Responsive grid (1 col mobile → 2 cols tablet → 4 cols desktop)
+ * - Professional card design with images, badges, and detailed information
+ * - Benefits lists and program metadata clearly displayed
  */
 export default function Programs() {
+  // ===== GSAP ANIMATION REFS =====
+  
+  // Hero section animations
+  const heroTitleRef = useTextAnimation<HTMLHeadingElement>(0.3);     // Typewriter effect for title
+  const heroDescriptionRef = useFadeInUp<HTMLParagraphElement>(0.8);  // Fade up for description
+  
+  // Programs grid with staggered animation
+  const programsGridRef = useStaggerAnimation<HTMLDivElement>(0.12, 0.5); // Cards appear in sequence
   return (
     <div className="pt-16">
-      {/* Hero Section */}
+      {/* Hero Section with animations */}
       <section className="section-padding bg-secondary">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6" data-testid="programs-title">
+          <h1 
+            ref={heroTitleRef}
+            className="text-4xl md:text-5xl font-bold mb-6" 
+            data-testid="programs-title"
+          >
             Our <span className="text-accent">Programs</span>
           </h1>
-          <p className="text-xl text-text-muted max-w-3xl mx-auto" data-testid="programs-description">
+          <p 
+            ref={heroDescriptionRef}
+            className="text-xl text-text-muted max-w-3xl mx-auto" 
+            data-testid="programs-description"
+          >
             Discover our comprehensive range of fitness programs designed to meet every goal,
             fitness level, and preference. Led by certified trainers in world-class facilities.
           </p>
         </div>
       </section>
 
-      {/* Programs Grid */}
+      {/* Programs Grid with staggered animation */}
       <section className="section-padding bg-primary">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div 
+            ref={programsGridRef}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
             {programs.map((program) => (
               <div
                 key={program.id}

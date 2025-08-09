@@ -1,6 +1,20 @@
 // Import Link component for navigation between pages
 import { Link } from "wouter";
 
+// Import our custom GSAP animation hooks for smooth, cute animations
+import {
+  useFadeInUp,
+  useSlideInLeft,
+  useSlideInRight,
+  useStaggerAnimation,
+  useTextAnimation,
+  useFloatingAnimation,
+  useHoverAnimation
+} from "@/hooks/use-gsap-animations";
+
+// Import particle background for enhanced visual appeal
+import ParticleBackground from "@/components/ParticleBackground";
+
 /**
  * Home page component - The main landing page for FitIndia gym website
  * 
@@ -12,10 +26,44 @@ import { Link } from "wouter";
  * Design features:
  * - High-quality background image from Unsplash for visual appeal
  * - Dark overlay for text readability over the background image
- * - Scroll indicator animation to encourage user interaction
+ * - GSAP animations for smooth, professional, and cute user interactions
  * - Responsive design that works on all device sizes
+ * 
+ * Animation features:
+ * - Hero title with typewriter effect and bounce animation
+ * - Staggered animation for call-to-action buttons
+ * - Floating scroll indicator with continuous motion
+ * - Statistics cards with scale-in effects
+ * - Featured programs with slide-in animations from alternating sides
  */
 export default function Home() {
+  // ===== GSAP ANIMATION REFS =====
+  // These refs will be attached to DOM elements to trigger specific animations
+  
+  // Hero section animations
+  const heroTitleRef = useTextAnimation<HTMLHeadingElement>(0.5);           // Typewriter effect for main title
+  const heroDescriptionRef = useFadeInUp<HTMLParagraphElement>(0.8, 1.2);    // Fade up for subtitle with delay
+  const heroButtonsRef = useStaggerAnimation<HTMLDivElement>(0.15, 1.5); // Staggered buttons with longer delay
+  
+  // Scroll indicator with floating animation
+  const scrollIndicatorRef = useFloatingAnimation<HTMLDivElement>(8, 2.5); // Gentle floating motion
+  
+  // Statistics section animations
+  const statsContainerRef = useStaggerAnimation<HTMLDivElement>(0.2, 0);    // Stats cards animate in sequence
+  
+  // Featured programs animations - alternating slide directions for visual interest
+  const program1Ref = useSlideInLeft<HTMLDivElement>(0, 0.8);       // First program slides from left
+  const program2Ref = useSlideInRight<HTMLDivElement>(0.2, 0.8);    // Second program slides from right
+  const program3Ref = useSlideInLeft<HTMLDivElement>(0.4, 0.8);     // Third program slides from left
+  
+  // Section headers with fade-up animation
+  const statsTitleRef = useFadeInUp<HTMLHeadingElement>(0, 1);
+  const programsTitleRef = useFadeInUp<HTMLHeadingElement>(0, 1);
+  
+  // Hover effects for interactive elements
+  const ctaButtonRef = useHoverAnimation<HTMLButtonElement>(1.08, 0.3);    // Primary button hover effect
+  const secondaryButtonRef = useHoverAnimation<HTMLButtonElement>(1.05, 0.2); // Secondary button hover effect
+
   return (
     <div>
       {/* ===== HERO SECTION ===== */}
@@ -35,46 +83,68 @@ export default function Home() {
         {/* Semi-transparent overlay to make text readable over the background image */}
         <div className="absolute inset-0 bg-primary/70"></div>
 
+        {/* Animated Particle Background for extra visual appeal */}
+        <ParticleBackground particleCount={15} maxSize={3} speed={0.8} />
+
         {/* Hero Content - Main messaging and call-to-action buttons */}
         {/* z-10 ensures content appears above background image and overlay */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           
-          {/* Main headline with responsive text sizes */}
+          {/* Main headline with responsive text sizes and typewriter animation */}
           {/* Orange accent color highlights key words "Body" and "Life" */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-testid="hero-title">
+          <h1 
+            ref={heroTitleRef}
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight" 
+            data-testid="hero-title"
+          >
             Transform Your <span className="text-accent">Body</span>
             <br />
             Transform Your <span className="text-accent">Life</span>
           </h1>
           
-          {/* Supporting description text */}
+          {/* Supporting description text with fade-up animation */}
           {/* Muted color for less emphasis but still readable */}
-          <p className="text-xl md:text-2xl mb-8 text-text-muted max-w-2xl mx-auto" data-testid="hero-description">
+          <p 
+            ref={heroDescriptionRef}
+            className="text-xl md:text-2xl mb-8 text-text-muted max-w-2xl mx-auto" 
+            data-testid="hero-description"
+          >
             Join FitIndia and discover the strongest version of yourself with world-class equipment, expert trainers, and a community that motivates you every step of the way.
           </p>
           
-          {/* Call-to-action buttons */}
+          {/* Call-to-action buttons with staggered animation */}
           {/* Responsive layout: stacked on mobile, side-by-side on larger screens */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* Primary CTA button - leads to membership signup */}
+          <div ref={heroButtonsRef} className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Primary CTA button - leads to membership signup with hover animation */}
             <Link href="/membership">
-              <button className="btn-primary text-lg px-8 py-4" data-testid="button-start-journey">
+              <button 
+                ref={ctaButtonRef}
+                className="btn-primary text-lg px-8 py-4" 
+                data-testid="button-start-journey"
+              >
                 Start Your Journey
               </button>
             </Link>
             
-            {/* Secondary CTA button - leads to about page for more info */}
+            {/* Secondary CTA button - leads to about page for more info with hover animation */}
             <Link href="/about">
-              <button className="btn-secondary text-lg px-8 py-4" data-testid="button-watch-story">
+              <button 
+                ref={secondaryButtonRef}
+                className="btn-secondary text-lg px-8 py-4" 
+                data-testid="button-watch-story"
+              >
                 Watch Our Story
               </button>
             </Link>
           </div>
         </div>
 
-        {/* Animated scroll indicator */}
+        {/* Animated scroll indicator with floating animation */}
         {/* Encourages users to scroll down and see more content */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-scroll">
+        <div 
+          ref={scrollIndicatorRef}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
           <i className="fas fa-chevron-down text-white text-2xl" data-testid="scroll-indicator"></i>
         </div>
       </section>
@@ -83,8 +153,8 @@ export default function Home() {
       {/* Shows key achievements and numbers to build credibility */}
       <section className="section-padding bg-secondary">
         <div className="container-custom">
-          {/* Grid layout: 1 column on mobile, 4 columns on medium+ screens */}
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          {/* Grid layout with staggered animation: 1 column on mobile, 4 columns on medium+ screens */}
+          <div ref={statsContainerRef} className="grid md:grid-cols-4 gap-8 text-center">
             
             {/* Happy Members Counter */}
             <div className="space-y-2">
@@ -113,10 +183,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Programs Preview */}
+      {/* Featured Programs Preview with animations */}
       <section className="section-padding bg-primary">
         <div className="container-custom text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" data-testid="featured-programs-title">
+          <h2 
+            ref={programsTitleRef}
+            className="text-4xl md:text-5xl font-bold mb-6" 
+            data-testid="featured-programs-title"
+          >
             Featured <span className="text-accent">Programs</span>
           </h2>
           <p className="text-xl text-text-muted max-w-3xl mx-auto mb-12" data-testid="featured-programs-description">
@@ -124,7 +198,10 @@ export default function Home() {
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-secondary rounded-xl p-6 hover-lift">
+            <div 
+              ref={program1Ref}
+              className="bg-secondary rounded-xl p-6 hover-lift"
+            >
               <div className="w-16 h-16 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4">
                 <i className="fas fa-dumbbell text-white text-2xl"></i>
               </div>
@@ -134,7 +211,10 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="bg-secondary rounded-xl p-6 hover-lift">
+            <div 
+              ref={program2Ref}
+              className="bg-secondary rounded-xl p-6 hover-lift"
+            >
               <div className="w-16 h-16 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4">
                 <i className="fas fa-leaf text-white text-2xl"></i>
               </div>
@@ -144,7 +224,10 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="bg-secondary rounded-xl p-6 hover-lift">
+            <div 
+              ref={program3Ref}
+              className="bg-secondary rounded-xl p-6 hover-lift"
+            >
               <div className="w-16 h-16 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4">
                 <i className="fas fa-fire text-white text-2xl"></i>
               </div>
