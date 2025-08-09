@@ -1,0 +1,849 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitIndia - Premium Fitness Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0F0F0F',
+                        'secondary': '#1A1A1A',
+                        'accent': '#FF4500',
+                        'accent-light': '#FF6B35',
+                        'text-muted': '#A0A0A0'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-primary text-white font-poppins">
+    
+    <!-- @COMPONENT: Navigation [sticky header with logo and menu items] -->
+    <nav class="fixed top-0 left-0 right-0 bg-primary/95 backdrop-blur-sm z-50 border-b border-secondary">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">FitIndia</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-accent transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-white hover:text-accent transition-colors duration-300">About</a>
+                    <a href="#programs" class="text-white hover:text-accent transition-colors duration-300">Programs</a>
+                    <a href="#trainers" class="text-white hover:text-accent transition-colors duration-300">Trainers</a>
+                    <a href="#membership" class="text-white hover:text-accent transition-colors duration-300">Membership</a>
+                    <a href="#contact" class="text-white hover:text-accent transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button class="bg-accent hover:bg-accent-light text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        Join Now
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white text-xl" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section [full-screen banner with inspiring imagery] -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Hero Background Image with Overlay -->
+        <!-- A powerful athlete performing a deadlift in a modern gym with dramatic lighting -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+             style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080');">
+        </div>
+        <div class="absolute inset-0 bg-primary/70"></div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Transform Your <span class="text-accent">Body</span><br>
+                Transform Your <span class="text-accent">Life</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-text-muted max-w-2xl mx-auto">
+                Join FitIndia and discover the strongest version of yourself with world-class equipment, expert trainers, and a community that motivates you every step of the way.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Start Your Journey
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                    Watch Our Story
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section [mission, vision, and facility showcase] -->
+    <section id="about" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">About <span class="text-accent">FitIndia</span></h2>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto">
+                    Since 2015, FitIndia has been India's premier destination for fitness transformation, 
+                    combining cutting-edge equipment with personalized training to help you achieve your goals.
+                </p>
+            </div>
+            
+            <!-- Mission & Vision Grid -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bullseye text-white text-lg"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold">Our Mission</h3>
+                    </div>
+                    <p class="text-text-muted leading-relaxed">
+                        To empower individuals to achieve their fitness goals through innovative training methods, 
+                        state-of-the-art facilities, and unwavering support. We believe fitness is not just about 
+                        physical transformation—it's about building confidence, discipline, and a healthier lifestyle.
+                    </p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                            <i class="fas fa-eye text-white text-lg"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold">Our Vision</h3>
+                    </div>
+                    <p class="text-text-muted leading-relaxed">
+                        To become India's most trusted fitness brand, creating a community where everyone feels 
+                        welcomed and motivated to pursue their health and wellness journey. We envision a future 
+                        where fitness is accessible, enjoyable, and sustainable for all.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Facility Images Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Modern gym interior with cardio equipment and natural lighting -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Modern Cardio Zone" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-semibold">Cardio Zone</h4>
+                            <p class="text-sm">Latest treadmills & equipment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weight training area with barbells and dumbbells -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Strength Training Area" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-semibold">Strength Training</h4>
+                            <p class="text-sm">Professional-grade weights</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Group fitness studio with yoga mats and mirrors -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Group Fitness Studio" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+                        <div class="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-semibold">Group Classes</h4>
+                            <p class="text-sm">Yoga, Zumba & more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Programs Section [workout programs showcase] -->
+    <section id="programs" class="py-20 bg-primary">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Our <span class="text-accent">Programs</span></h2>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto">
+                    Discover our comprehensive range of fitness programs designed to meet every goal, 
+                    fitness level, and preference. Led by certified trainers in world-class facilities.
+                </p>
+            </div>
+            
+            <!-- Programs Grid -->
+            <!-- @MAP: programs.map(program => ( -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Strength Training Program -->
+                <div class="bg-secondary rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <!-- Person performing deadlifts with proper form in a professional gym -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                             alt="Strength Training Program" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" 
+                             data-mock-image="true" />
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-accent px-3 py-1 rounded-full text-xs font-semibold">POPULAR</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3" data-bind="program.name">Strength Training</h3>
+                        <p class="text-text-muted mb-4 text-sm" data-bind="program.description">
+                            Build muscle, increase power, and transform your physique with our comprehensive strength training program.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent font-semibold" data-bind="program.duration">45 min</span>
+                            <span class="text-text-muted text-sm" data-bind="program.level">All Levels</span>
+                        </div>
+                        <button class="w-full bg-accent hover:bg-accent-light text-white py-2 rounded-lg font-semibold transition-colors duration-300" data-event="click:joinProgram">
+                            Join Program
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Yoga Program -->
+                <div class="bg-secondary rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <!-- Peaceful yoga class with multiple participants in warrior pose -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                             alt="Yoga Program" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" 
+                             data-mock-image="true" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3" data-bind="program.name">Yoga & Meditation</h3>
+                        <p class="text-text-muted mb-4 text-sm" data-bind="program.description">
+                            Find balance, flexibility, and inner peace through our guided yoga and meditation sessions.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent font-semibold" data-bind="program.duration">60 min</span>
+                            <span class="text-text-muted text-sm" data-bind="program.level">Beginner</span>
+                        </div>
+                        <button class="w-full bg-accent hover:bg-accent-light text-white py-2 rounded-lg font-semibold transition-colors duration-300" data-event="click:joinProgram">
+                            Join Program
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- CrossFit Program -->
+                <div class="bg-secondary rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <!-- High-intensity CrossFit workout with kettlebells and box jumps -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                             alt="CrossFit Program" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" 
+                             data-mock-image="true" />
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-red-500 px-3 py-1 rounded-full text-xs font-semibold">INTENSE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3" data-bind="program.name">CrossFit</h3>
+                        <p class="text-text-muted mb-4 text-sm" data-bind="program.description">
+                            High-intensity functional movements that will challenge your limits and build total-body fitness.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent font-semibold" data-bind="program.duration">50 min</span>
+                            <span class="text-text-muted text-sm" data-bind="program.level">Advanced</span>
+                        </div>
+                        <button class="w-full bg-accent hover:bg-accent-light text-white py-2 rounded-lg font-semibold transition-colors duration-300" data-event="click:joinProgram">
+                            Join Program
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Zumba Program -->
+                <div class="bg-secondary rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <!-- Energetic Zumba dance fitness class with colorful lighting -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                             alt="Zumba Program" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" 
+                             data-mock-image="true" />
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 px-3 py-1 rounded-full text-xs font-semibold">FUN</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3" data-bind="program.name">Zumba Dance</h3>
+                        <p class="text-text-muted mb-4 text-sm" data-bind="program.description">
+                            Dance your way to fitness with high-energy Zumba classes that make working out feel like a party.
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent font-semibold" data-bind="program.duration">45 min</span>
+                            <span class="text-text-muted text-sm" data-bind="program.level">All Levels</span>
+                        </div>
+                        <button class="w-full bg-accent hover:bg-accent-light text-white py-2 rounded-lg font-semibold transition-colors duration-300" data-event="click:joinProgram">
+                            Join Program
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Programs Section -->
+
+    <!-- @COMPONENT: Trainers Section [professional trainer profiles] -->
+    <section id="trainers" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Meet Our <span class="text-accent">Trainers</span></h2>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto">
+                    Our certified fitness professionals are here to guide you on your journey. 
+                    Each trainer brings years of experience and a passion for helping you succeed.
+                </p>
+            </div>
+            
+            <!-- Trainers Grid -->
+            <!-- @MAP: trainers.map(trainer => ( -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Trainer 1 -->
+                <div class="bg-primary rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <!-- Professional headshot of a confident male fitness trainer -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
+                             alt="Trainer Profile" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300" 
+                             data-mock-image="true" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" data-bind="trainer.name">Rajesh Kumar</h3>
+                        <p class="text-accent font-medium mb-3" data-bind="trainer.specialty">Strength & Conditioning Specialist</p>
+                        <p class="text-text-muted text-sm mb-4" data-bind="trainer.bio">
+                            8+ years of experience in bodybuilding and strength training. Certified personal trainer who specializes in muscle building and athletic performance.
+                        </p>
+                        <div class="flex items-center space-x-4 text-sm text-text-muted">
+                            <span data-bind="trainer.experience">8 Years Exp.</span>
+                            <span data-bind="trainer.certification">ACSM Certified</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <button class="text-accent hover:text-accent-light transition-colors duration-300">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </button>
+                            <button class="text-accent hover:text-accent-light transition-colors duration-300">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trainer 2 -->
+                <div class="bg-primary rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <!-- Professional photo of a female yoga instructor in meditation pose -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
+                             alt="Trainer Profile" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300" 
+                             data-mock-image="true" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" data-bind="trainer.name">Priya Sharma</h3>
+                        <p class="text-accent font-medium mb-3" data-bind="trainer.specialty">Yoga & Mindfulness Expert</p>
+                        <p class="text-text-muted text-sm mb-4" data-bind="trainer.bio">
+                            Certified yoga instructor with expertise in Hatha, Vinyasa, and meditation. Passionate about mental wellness and holistic health approaches.
+                        </p>
+                        <div class="flex items-center space-x-4 text-sm text-text-muted">
+                            <span data-bind="trainer.experience">6 Years Exp.</span>
+                            <span data-bind="trainer.certification">RYT-500 Certified</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <button class="text-accent hover:text-accent-light transition-colors duration-300">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </button>
+                            <button class="text-accent hover:text-accent-light transition-colors duration-300">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trainer 3 -->
+                <div class="bg-primary rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <!-- Athletic trainer demonstrating CrossFit movements with kettlebells -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
+                             alt="Trainer Profile" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300" 
+                             data-mock-image="true" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" data-bind="trainer.name">Mike Johnson</h3>
+                        <p class="text-accent font-medium mb-3" data-bind="trainer.specialty">CrossFit & HIIT Coach</p>
+                        <p class="text-text-muted text-sm mb-4" data-bind="trainer.bio">
+                            Former competitive athlete turned fitness coach. Specializes in high-intensity training and functional movement patterns for peak performance.
+                        </p>
+                        <div class="flex items-center space-x-4 text-sm text-text-muted">
+                            <span data-bind="trainer.experience">10 Years Exp.</span>
+                            <span data-bind="trainer.certification">CrossFit L3</span>
+                        </div>
+                        <div class="flex space-x-3 mt-4">
+                            <button class="text-accent hover:text-accent-light transition-colors duration-300">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </button>
+                            <button class="text-accent hover:text-accent-light transition-colors duration-300">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Trainers Section -->
+
+    <!-- @COMPONENT: Membership Plans [pricing table with multiple tiers] -->
+    <section id="membership" class="py-20 bg-primary">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Membership <span class="text-accent">Plans</span></h2>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto">
+                    Choose the perfect plan for your fitness journey. All memberships include access to our full range of equipment, 
+                    group classes, and expert guidance from our certified trainers.
+                </p>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Monthly Plan -->
+                <div class="bg-secondary rounded-xl p-8 relative hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4" data-bind="plan.name">Monthly</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-accent" data-bind="plan.price">₹2,999</span>
+                            <span class="text-text-muted">/month</span>
+                        </div>
+                        <p class="text-text-muted mb-8" data-bind="plan.description">Perfect for trying out our facilities and getting started on your fitness journey.</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center space-x-3" data-bind="plan.features[0]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Access to all gym equipment</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[1]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Group fitness classes</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[2]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Locker room access</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[3]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Fitness assessment</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-accent hover:bg-accent-light text-white py-3 rounded-lg font-semibold transition-colors duration-300" data-event="click:selectPlan">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- Quarterly Plan (Most Popular) -->
+                <div class="bg-secondary rounded-xl p-8 relative hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl border-2 border-accent" data-mock="true">
+                    <!-- Most Popular Badge -->
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent px-4 py-2 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4" data-bind="plan.name">Quarterly</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-accent" data-bind="plan.price">₹7,999</span>
+                            <span class="text-text-muted">/3 months</span>
+                        </div>
+                        <p class="text-text-muted mb-8" data-bind="plan.description">Best value for serious fitness enthusiasts with personal training sessions included.</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center space-x-3" data-bind="plan.features[0]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Everything in Monthly</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[1]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>2 personal training sessions</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[2]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Nutrition consultation</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[3]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Progress tracking</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[4]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Guest passes (2/month)</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-accent hover:bg-accent-light text-white py-3 rounded-lg font-semibold transition-colors duration-300" data-event="click:selectPlan">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- Yearly Plan -->
+                <div class="bg-secondary rounded-xl p-8 relative hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl" data-mock="true">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4" data-bind="plan.name">Yearly</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-accent" data-bind="plan.price">₹24,999</span>
+                            <span class="text-text-muted">/year</span>
+                        </div>
+                        <p class="text-text-muted mb-8" data-bind="plan.description">Ultimate fitness package with maximum savings and premium benefits.</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center space-x-3" data-bind="plan.features[0]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Everything in Quarterly</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[1]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Monthly personal training</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[2]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Unlimited guest passes</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[3]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Priority class booking</span>
+                        </li>
+                        <li class="flex items-center space-x-3" data-bind="plan.features[4]">
+                            <i class="fas fa-check text-accent"></i>
+                            <span>Complimentary merchandise</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-accent hover:bg-accent-light text-white py-3 rounded-lg font-semibold transition-colors duration-300" data-event="click:selectPlan">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Money Back Guarantee -->
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center space-x-3 bg-secondary px-6 py-4 rounded-lg">
+                    <i class="fas fa-shield-alt text-accent text-xl"></i>
+                    <span class="text-lg font-semibold">30-Day Money Back Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Membership Plans -->
+
+    <!-- @COMPONENT: Contact Section [contact form and location map] -->
+    <section id="contact" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In <span class="text-accent">Touch</span></h2>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto">
+                    Ready to start your fitness journey? Contact us today for a free consultation and tour of our facilities.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-primary rounded-xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Send us a Message</h3>
+                    <form class="space-y-6" data-implementation="Handle form submission with validation">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" 
+                                       class="w-full bg-secondary border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors duration-300" 
+                                       placeholder="Enter your first name" 
+                                       data-bind="form.firstName" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2" for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" 
+                                       class="w-full bg-secondary border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors duration-300" 
+                                       placeholder="Enter your last name" 
+                                       data-bind="form.lastName" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" 
+                                   class="w-full bg-secondary border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors duration-300" 
+                                   placeholder="Enter your email address" 
+                                   data-bind="form.email" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="w-full bg-secondary border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors duration-300" 
+                                   placeholder="Enter your phone number" 
+                                   data-bind="form.phone" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="interest">Interested Program</label>
+                            <select id="interest" name="interest" 
+                                    class="w-full bg-secondary border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors duration-300" 
+                                    data-bind="form.interest">
+                                <option value="">Select a program</option>
+                                <option value="strength">Strength Training</option>
+                                <option value="yoga">Yoga & Meditation</option>
+                                <option value="crossfit">CrossFit</option>
+                                <option value="zumba">Zumba Dance</option>
+                                <option value="personal">Personal Training</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2" for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" 
+                                      class="w-full bg-secondary border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors duration-300 resize-none" 
+                                      placeholder="Tell us about your fitness goals and any questions you have" 
+                                      data-bind="form.message"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-accent hover:bg-accent-light text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" 
+                                data-event="click:submitContactForm">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information & Map -->
+                <div class="space-y-8">
+                    <!-- Contact Details -->
+                    <div class="bg-primary rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6">Visit Our Gym</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Address</h4>
+                                    <p class="text-text-muted">123 Fitness Street, Sector 15<br>Gurgaon, Haryana 122001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <p class="text-text-muted">+91 98765 43210<br>+91 98765 43211</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-text-muted">info@fitindia.com<br>support@fitindia.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Hours</h4>
+                                    <p class="text-text-muted">Mon-Fri: 5:00 AM - 11:00 PM<br>Sat-Sun: 6:00 AM - 10:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="bg-primary rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6">Location</h3>
+                        <div class="bg-secondary rounded-lg h-64 flex items-center justify-center" data-implementation="Integrate Google Maps API here">
+                            <div class="text-center">
+                                <i class="fas fa-map text-accent text-3xl mb-4"></i>
+                                <p class="text-text-muted">Interactive Google Maps will be embedded here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer [site-wide footer with links and social media] -->
+    <footer class="bg-primary border-t border-secondary py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                            <i class="fas fa-dumbbell text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">FitIndia</span>
+                    </div>
+                    <p class="text-text-muted text-sm">
+                        Transform your life through fitness. Join India's premier fitness community and achieve your health goals with expert guidance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-text-muted hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="text-text-muted hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="#programs" class="text-text-muted hover:text-accent transition-colors duration-300">Programs</a></li>
+                        <li><a href="#trainers" class="text-text-muted hover:text-accent transition-colors duration-300">Trainers</a></li>
+                        <li><a href="#membership" class="text-text-muted hover:text-accent transition-colors duration-300">Membership</a></li>
+                        <li><a href="#contact" class="text-text-muted hover:text-accent transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Programs -->
+                <div>
+                    <h4 class="font-semibold mb-4">Programs</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">Strength Training</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">Yoga & Meditation</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">CrossFit</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">Zumba Dance</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">Personal Training</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent transition-colors duration-300">Nutrition Coaching</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-accent"></i>
+                            <span class="text-text-muted">123 Fitness Street, Gurgaon</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-accent"></i>
+                            <span class="text-text-muted">+91 98765 43210</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <span class="text-text-muted">info@fitindia.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-accent"></i>
+                            <span class="text-text-muted">Mon-Sun: 5AM - 11PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-secondary pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-text-muted text-sm">
+                    © 2024 FitIndia. All rights reserved. | Privacy Policy | Terms of Service
+                </p>
+                <p class="text-text-muted text-sm mt-4 md:mt-0">
+                    Designed with ❤️ for fitness enthusiasts
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        // TODO: Implement smooth scrolling navigation and mobile menu toggle
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Navbar background change on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-primary');
+                    navbar.classList.remove('bg-primary/95');
+                } else {
+                    navbar.classList.add('bg-primary/95');
+                    navbar.classList.remove('bg-primary');
+                }
+            });
+
+            // Mobile menu toggle functionality would be implemented here
+            // Form validation and submission would be implemented here
+            // Additional interactive features would be implemented here
+        })();
+    </script>
+</body>
+</html>

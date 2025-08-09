@@ -75,7 +75,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGd5bXxlbnwwfHwwfHx8MA%3D%3D`,
           }}
         ></div>
         
@@ -97,9 +97,9 @@ export default function Home() {
             className="text-5xl md:text-7xl font-bold mb-6 leading-[1.2]" 
             data-testid="hero-title"
           >
-            Transform Your <span className="text-accent">Body</span>
+            Transform Your <span className="text-accent">Body & Life</span>
             <br />
-            Transform Your <span className="text-accent">Life</span>
+            
           </h1>
           
           {/* Supporting description text with fade-up animation */}

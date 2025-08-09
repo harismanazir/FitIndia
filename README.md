@@ -86,6 +86,7 @@ fitindia/
    ```
    This will install all required packages including:
    - React 18 and React DOM
+   
    - TypeScript for type safety
    - Tailwind CSS for styling
    - Vite for fast development
