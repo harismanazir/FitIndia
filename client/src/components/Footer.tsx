@@ -129,7 +129,7 @@ export default function Footer() {
             © {currentYear} FitIndia. All rights reserved. | Privacy Policy | Terms of Service
           </p>
           <p className="text-text-muted text-sm mt-4 md:mt-0" data-testid="tagline">
-            Designed with ❤️ for fitness enthusiasts
+            Designed with ❤️ for a healthier India by Haris
           </p>
         </div>
       </div>
